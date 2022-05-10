@@ -100,4 +100,44 @@ void disangphai()
   digitalWrite(in3, 0);
   digitalWrite(in4, 0);
 }
+void disangtrai()
+{
+  analogWrite(enbA, 0);
+  analogWrite(enbB, 80);
+  digitalWrite(in1, 0);
+  digitalWrite(in2, 0);
+  digitalWrite(in3, 0);
+  digitalWrite(in4, 1);
+
+}
+
+void dilui()
+{
+  analogWrite(enbA, 80);
+  analogWrite(enbB, 80);
+  digitalWrite(in1, 1);
+  digitalWrite(in2, 0);
+  digitalWrite(in3, 1);
+  digitalWrite(in4, 0);
+
+}
+
+
+
+void dokhoangcach()
+{
+
+  digitalWrite(trig, LOW); 
+  delayMicroseconds(2);
+  digitalWrite(trig, HIGH);  
+  delayMicroseconds(10); 
+  digitalWrite(trig, LOW); 
+
+
+  // Đo độ rộng xung HIGH ở chân echo.
+  thoigian = pulseIn(echo, HIGH);
+
+  khoangcach = thoigian / 2 / 29.412;
+
+}
 
